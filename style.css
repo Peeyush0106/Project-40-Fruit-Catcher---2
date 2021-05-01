@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  border: 5px solid maroon;
+}
+
+/* Styling for buttons*/
+
+.buttonsClass {
+  position: relative;
+  background-color: blue;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonsClass:hover {
+  background-color: #3e8e41
+}
+
+.buttonsClass:not(:hover) {
+  background-color: blue;
+}
+
+.buttonClass:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* .touchScreenButtons{
+	background-color:blue;
+	width:85px;
+	height: 50px;
+	font-size: 22px;
+	color: white;
+} */
