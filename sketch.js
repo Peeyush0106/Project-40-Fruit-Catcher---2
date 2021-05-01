@@ -28,6 +28,7 @@ var edgeLeft, edgeRight, edgeDown;
 var x, buttons;
 
 var moveLeft, moveRight;
+var gameExited;
 
 // Preload of Images in the program
 function preload() {
@@ -90,13 +91,13 @@ function draw() {
         if (moveLeft === true) {
             moveLeftSide();
         }
-        if (keyWentUp(LEFT_ARROW)) {
+        if (keyWentUp(LEFT_ARROW) || keyWentUp(UP_ARROW)) {
             moveLeft = false;
         }
         if (moveRight === true) {
             moveRightSide();
         }
-        if (keyWentUp(RIGHT_ARROW)) {
+        if (keyWentUp(RIGHT_ARROW) || keyWentUp(DOWN_ARROW)) {
             moveRight = false;
         }
     }

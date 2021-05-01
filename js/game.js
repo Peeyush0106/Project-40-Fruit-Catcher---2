@@ -67,6 +67,12 @@ class Game {
             button.show();
         }
 
+        if (gameExited) {
+            clear();
+            alert("The other player has exited the game, try waiting for another one and refresh the page...");
+            gameExited = false;
+        }
+
         // Create Fruits
         ////////////////////////////////////////////////////////////////////////
         /**/if (frameCount % 30 === 0) {                                      //
@@ -116,8 +122,6 @@ class Game {
             textSize(25);
             text(allPlayers[plr].name, x - 25, y + 25);
             fill("white");
-            text(mouseX, 20, 150);
-            text(mouseY, 20, 200);
             if (allPlayerScores !== undefined
                 && allPlayerScores.player1 !== undefined
                 && allPlayerScores.player1.score !== undefined
