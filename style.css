@@ -5,7 +5,7 @@ html, body {
 
 canvas {
   display: block;
-  border: 5px solid maroon;
+  border: none;
 }
 
 /* Styling for buttons*/

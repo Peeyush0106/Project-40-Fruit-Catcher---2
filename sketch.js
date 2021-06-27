@@ -28,7 +28,7 @@ var edgeLeft, edgeRight, edgeDown;
 var x, buttons;
 
 var moveLeft, moveRight;
-var gameExited;
+var gameExited, deviceNotCompatible;
 
 // Preload of Images in the program
 function preload() {
@@ -68,7 +68,7 @@ function setup() {
 // Continuous game script run
 function draw() {
     // Internet speed is enough for database loads
-    if (firebase !== undefined && database !== undefined) {
+    if (firebase !== undefined && database !== undefined && !deviceNotCompatible) {
         // Background
         background(back_img);
 
@@ -104,6 +104,10 @@ function draw() {
     // Internet speed is low.
     if (firebase === undefined || database === undefined) {
         alert("Seems like your internet speed is not quite good");
+    }
+    if (deviceNotCompatible && formObj && formObj.greeting !== undefined) {
+        formObj.hide();
+        formObj.reset.hide();
     }
 }
 

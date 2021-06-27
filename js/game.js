@@ -48,10 +48,7 @@ class Game {
     // When the players are playing the game
     play() {
         // Hide formObj
-        formObj.greeting.hide();
-        formObj.button.hide();
-        formObj.input.hide();
-        formObj.title.hide();
+        formObj.hide();
 
         //Get player information
         Player.getPlayerInfo();
@@ -144,7 +141,20 @@ class Game {
         }
     }
     createPlayButtons() {
-        // Also check style.css for knowing the styles added to these buttons
+        function isTouchDevice() {
+            return typeof window.ontouchstart !== 'undefined';
+        }
+        if (isTouchDevice() === true) {
+            alert("Device not compatible");
+            deviceNotCompatible = true;
+            document.getElementById("not-compatible-device-txt").style.display = "block";
+        }
+        else {
+            this.createNonTouchPlayButtons();
+        }
+    }
+    // Also check style.css for knowing the styles added to these buttons
+    createNonTouchPlayButtons() {
         buttons.push(createButton("Left").attribute("class", "buttonsClass").position(x1, 500).mousePressed(() => {
             moveLeft = true;
         }).hide());
