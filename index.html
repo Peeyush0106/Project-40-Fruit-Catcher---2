@@ -10,7 +10,8 @@
   <script src="libraries/p5.play.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
-  <!--<script>
+  <script>
+    // Your web app's Firebase configuration
     var firebaseConfig = {
       apiKey: "AIzaSyBNTwlA4k-QLucBF7aFgmxpMzaQ2qzfdxM",
       authDomain: "project-40-1dcf2.firebaseapp.com",
@@ -19,19 +20,6 @@
       storageBucket: "project-40-1dcf2.appspot.com",
       messagingSenderId: "668773883112",
       appId: "1:668773883112:web:7e29814f7894ae512c3d5d"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script> -->
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyCs_4HQVYkhTu7ZXBdCNNusgUsXv4_9PKo",
-      authDomain: "road-racing-game.firebaseapp.com",
-      databaseURL: "https://road-racing-game-default-rtdb.firebaseio.com",
-      projectId: "road-racing-game",
-      storageBucket: "road-racing-game.appspot.com",
-      messagingSenderId: "797510430003",
-      appId: "1:797510430003:web:201053ced178501b002246"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -45,7 +33,8 @@
 </head>
 
 <body>
-  <h1 style="display: none;" id="not-compatible-device-txt"> Your device is not compatible to play this game so you can leave this page. 
+  <h1 style="display: none;" id="not-compatible-device-txt"> Your device is not compatible to play this game so you can
+    leave this page.
   </h1>
   <script src=" sketch.js"></script>
 </body>
