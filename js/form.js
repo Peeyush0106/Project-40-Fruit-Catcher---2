@@ -12,6 +12,7 @@ class Form {
         this.title.style("font-size", "70px");
         this.title.style("color", "skyblue");
         this.input.position(400, 400);
+        this.input.attribute("maxlength", "7");
         this.input.style("width", "200px");
         this.input.style("height", "20px");
         this.input.style("background", "lavender");

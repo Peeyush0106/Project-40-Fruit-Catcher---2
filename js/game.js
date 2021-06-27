@@ -18,7 +18,7 @@ class Game {
             gameState: state
         });
     }
-    // Start the game and show the form
+    // Start the game and show the formObj
     async start() {
         console.log("Game start");
         if (gameState === 0) {
@@ -28,8 +28,8 @@ class Game {
                 playerCount = playerCountRef.val();
                 player.getCount();
             }
-            form = new Form()
-            form.display();
+            formObj = new Form()
+            formObj.display();
         }
         // Create Players
         ////////////////////////////////////////////////////////////////////////
@@ -47,11 +47,11 @@ class Game {
     }
     // When the players are playing the game
     play() {
-        // Hide form
-        form.greeting.hide();
-        form.button.hide();
-        form.input.hide();
-        form.title.hide();
+        // Hide formObj
+        formObj.greeting.hide();
+        formObj.button.hide();
+        formObj.input.hide();
+        formObj.title.hide();
 
         //Get player information
         Player.getPlayerInfo();
@@ -144,18 +144,7 @@ class Game {
         }
     }
     createPlayButtons() {
-        function isTouchDevice() {
-            return typeof window.ontouchstart !== 'undefined';
-        }
-        if (isTouchDevice() === true) {
-            this.createTouchPlayButtons();
-        }
-        else {
-            this.createNonTouchPlayButtons();
-        }
-    }
-    // Also check style.css for knowing the styles added to these buttons
-    createNonTouchPlayButtons() {
+        // Also check style.css for knowing the styles added to these buttons
         buttons.push(createButton("Left").attribute("class", "buttonsClass").position(x1, 500).mousePressed(() => {
             moveLeft = true;
         }).hide());
@@ -163,33 +152,5 @@ class Game {
         buttons.push(createButton("Right").attribute("class", "buttonsClass").position(x2, 500).mousePressed(() => {
             moveRight = true;
         }).hide());
-    }
-    createTouchPlayButtons() {
-        button1 = createButton("Left").position(x1, 500).attribute("class", "buttonClass")
-        // style("background-color", "blue")
-        // .style("width", "85px")
-        // .style("height", "50px")
-        // .style("font-size", "22px")
-        // .style("color", "white")
-        mousePressed(() => {
-            moveLeft = true;
-            button1.style("background-color", "green");
-        })
-            .hide();
-
-        button2 = createButton("Right");
-
-        button2.position(x2, 500);
-        button2.style("background-color", "blue");
-        button2.style("width", "85px");
-        button2.style("height", "50px");
-        button2.style("font-size", "22px");
-        button2.style("color", "white");
-        button2.mousePressed(() => {
-            moveRight = true;
-            button2.style("background-color", "green");
-        });
-        button2.hide()
-        buttons.push(button2);
     }
 }
